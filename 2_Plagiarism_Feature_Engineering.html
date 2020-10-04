@@ -13109,7 +13109,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NOTE:</span>
@@ -13127,7 +13127,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import libraries</span>
@@ -13151,7 +13151,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">csv_file</span> <span class="o">=</span> <span class="s1">&#39;data/file_information.csv&#39;</span>
@@ -13171,7 +13171,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[7]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
@@ -13328,22 +13328,16 @@ div#notebook {
     
     <span class="c1"># your code here</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv_file</span><span class="p">)</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;Class&#39;</span><span class="p">]</span> <span class="o">=</span>  <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;Category&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span>
-        <span class="p">{</span>
-             <span class="s1">&#39;orig&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
-             <span class="s1">&#39;non&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> 
-             <span class="s1">&#39;heavy&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> 
-             <span class="s1">&#39;light&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> 
-             <span class="s1">&#39;cut&#39;</span><span class="p">:</span> <span class="mi">1</span>
-        <span class="p">})</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;Category&#39;</span><span class="p">]</span> <span class="o">=</span>  <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;Category&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span>
-        <span class="p">{</span>
-            <span class="s1">&#39;orig&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
-            <span class="s1">&#39;non&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> 
-            <span class="s1">&#39;heavy&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> 
-            <span class="s1">&#39;light&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> 
-            <span class="s1">&#39;cut&#39;</span><span class="p">:</span> <span class="mi">3</span>
-        <span class="p">})</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Category</span> <span class="o">==</span> <span class="s2">&quot;heavy&quot;</span><span class="p">,</span> <span class="s2">&quot;Category&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Category</span> <span class="o">==</span> <span class="s2">&quot;light&quot;</span><span class="p">,</span> <span class="s2">&quot;Category&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Category</span> <span class="o">==</span> <span class="s2">&quot;cut&quot;</span><span class="p">,</span> <span class="s2">&quot;Category&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Category</span> <span class="o">==</span> <span class="s2">&quot;non&quot;</span><span class="p">,</span> <span class="s2">&quot;Category&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Category</span> <span class="o">==</span> <span class="s2">&quot;orig&quot;</span><span class="p">,</span> <span class="s2">&quot;Category&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Category</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Class&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Category</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Class&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Category</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    
     
     <span class="k">return</span> <span class="n">df</span>
 </pre></div>
@@ -13425,70 +13419,70 @@ div#notebook {
       <td>g0pA_taska.txt</td>
       <td>a</td>
       <td>0</td>
-      <td>0</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>1</th>
       <td>g0pA_taskb.txt</td>
       <td>b</td>
       <td>3</td>
-      <td>1</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>2</th>
       <td>g0pA_taskc.txt</td>
       <td>c</td>
       <td>2</td>
-      <td>1</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>3</th>
       <td>g0pA_taskd.txt</td>
       <td>d</td>
       <td>1</td>
-      <td>1</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>4</th>
       <td>g0pA_taske.txt</td>
       <td>e</td>
       <td>0</td>
-      <td>0</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>5</th>
       <td>g0pB_taska.txt</td>
       <td>a</td>
       <td>0</td>
-      <td>0</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>6</th>
       <td>g0pB_taskb.txt</td>
       <td>b</td>
       <td>0</td>
-      <td>0</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>7</th>
       <td>g0pB_taskc.txt</td>
       <td>c</td>
       <td>3</td>
-      <td>1</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>8</th>
       <td>g0pB_taskd.txt</td>
       <td>d</td>
       <td>2</td>
-      <td>1</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>9</th>
       <td>g0pB_taske.txt</td>
       <td>e</td>
       <td>1</td>
-      <td>1</td>
+      <td>1.0</td>
     </tr>
   </tbody>
 </table>
@@ -13584,35 +13578,35 @@ Example data:
       <td>g0pA_taska.txt</td>
       <td>a</td>
       <td>0</td>
-      <td>0</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>1</th>
       <td>g0pA_taskb.txt</td>
       <td>b</td>
       <td>3</td>
-      <td>1</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>2</th>
       <td>g0pA_taskc.txt</td>
       <td>c</td>
       <td>2</td>
-      <td>1</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>3</th>
       <td>g0pA_taskd.txt</td>
       <td>d</td>
       <td>1</td>
-      <td>1</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>4</th>
       <td>g0pA_taske.txt</td>
       <td>e</td>
       <td>0</td>
-      <td>0</td>
+      <td>0.0</td>
     </tr>
   </tbody>
 </table>
@@ -13701,7 +13695,7 @@ Example data:
       <td>g0pA_taska.txt</td>
       <td>a</td>
       <td>0</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>inheritance is a basic concept of object orien...</td>
     </tr>
     <tr>
@@ -13709,7 +13703,7 @@ Example data:
       <td>g0pA_taskb.txt</td>
       <td>b</td>
       <td>3</td>
-      <td>1</td>
+      <td>1.0</td>
       <td>pagerank is a link analysis algorithm used by ...</td>
     </tr>
     <tr>
@@ -13717,7 +13711,7 @@ Example data:
       <td>g0pA_taskc.txt</td>
       <td>c</td>
       <td>2</td>
-      <td>1</td>
+      <td>1.0</td>
       <td>the vector space model also called term vector...</td>
     </tr>
     <tr>
@@ -13725,7 +13719,7 @@ Example data:
       <td>g0pA_taskd.txt</td>
       <td>d</td>
       <td>1</td>
-      <td>1</td>
+      <td>1.0</td>
       <td>bayes theorem was names after rev thomas bayes...</td>
     </tr>
     <tr>
@@ -13733,7 +13727,7 @@ Example data:
       <td>g0pA_taske.txt</td>
       <td>e</td>
       <td>0</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>dynamic programming is an algorithm design tec...</td>
     </tr>
   </tbody>
@@ -13868,7 +13862,7 @@ Example data:
       <td>g0pA_taska.txt</td>
       <td>a</td>
       <td>0</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>inheritance is a basic concept of object orien...</td>
       <td>train</td>
     </tr>
@@ -13877,7 +13871,7 @@ Example data:
       <td>g0pA_taskb.txt</td>
       <td>b</td>
       <td>3</td>
-      <td>1</td>
+      <td>1.0</td>
       <td>pagerank is a link analysis algorithm used by ...</td>
       <td>test</td>
     </tr>
@@ -13886,7 +13880,7 @@ Example data:
       <td>g0pA_taskc.txt</td>
       <td>c</td>
       <td>2</td>
-      <td>1</td>
+      <td>1.0</td>
       <td>the vector space model also called term vector...</td>
       <td>train</td>
     </tr>
@@ -13895,7 +13889,7 @@ Example data:
       <td>g0pA_taskd.txt</td>
       <td>d</td>
       <td>1</td>
-      <td>1</td>
+      <td>1.0</td>
       <td>bayes theorem was names after rev thomas bayes...</td>
       <td>train</td>
     </tr>
@@ -13904,7 +13898,7 @@ Example data:
       <td>g0pA_taske.txt</td>
       <td>e</td>
       <td>0</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>dynamic programming is an algorithm design tec...</td>
       <td>train</td>
     </tr>
@@ -13913,7 +13907,7 @@ Example data:
       <td>g0pB_taska.txt</td>
       <td>a</td>
       <td>0</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>inheritance is a basic concept in object orien...</td>
       <td>train</td>
     </tr>
@@ -13922,7 +13916,7 @@ Example data:
       <td>g0pB_taskb.txt</td>
       <td>b</td>
       <td>0</td>
-      <td>0</td>
+      <td>0.0</td>
       <td>pagerank pr refers to both the concept and the...</td>
       <td>train</td>
     </tr>
@@ -13931,7 +13925,7 @@ Example data:
       <td>g0pB_taskc.txt</td>
       <td>c</td>
       <td>3</td>
-      <td>1</td>
+      <td>1.0</td>
       <td>vector space model is an algebraic model for r...</td>
       <td>test</td>
     </tr>
@@ -13940,7 +13934,7 @@ Example data:
       <td>g0pB_taskd.txt</td>
       <td>d</td>
       <td>2</td>
-      <td>1</td>
+      <td>1.0</td>
       <td>bayes theorem relates the conditional and marg...</td>
       <td>train</td>
     </tr>
@@ -13949,7 +13943,7 @@ Example data:
       <td>g0pB_taske.txt</td>
       <td>e</td>
       <td>1</td>
-      <td>1</td>
+      <td>1.0</td>
       <td>dynamic programming is a method for solving ma...</td>
       <td>test</td>
     </tr>
@@ -14013,11 +14007,12 @@ $$ \frac{\sum{count(\text{ngram}_{A}) \cap count(\text{ngram}_{S})}}{\sum{count(
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Calculate the ngram containment for one answer file/source file pair in a df</span>
 <span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span>
+
 <span class="k">def</span> <span class="nf">calculate_containment</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">answer_filename</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Calculates the containment between a given answer text and its associated source text.</span>
 <span class="sd">       This function creates a count of ngrams (of a size, n) for each text file in our data.</span>
@@ -14040,12 +14035,8 @@ $$ \frac{\sum{count(\text{ngram}_{A}) \cap count(\text{ngram}_{S})}}{\sum{count(
     
    
     <span class="n">transformed</span> <span class="o">=</span> <span class="n">counter</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">([</span><span class="n">answer_text</span><span class="p">,</span> <span class="n">source_text</span><span class="p">])</span>
-
-<span class="c1">#     print(counter.get_feature_names())</span>
+    
     <span class="n">ngrams_array</span> <span class="o">=</span> <span class="n">transformed</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
-    
-
-    
 
     <span class="n">common_ngrams</span> <span class="o">=</span> <span class="p">[];</span>
     
@@ -14057,6 +14048,7 @@ $$ \frac{\sum{count(\text{ngram}_{A}) \cap count(\text{ngram}_{S})}}{\sum{count(
     <span class="n">count_ngrams_answer</span> <span class="o">=</span> <span class="n">ngrams_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
     
     <span class="k">return</span> <span class="n">count_common_ngrams</span> <span class="o">/</span> <span class="n">count_ngrams_answer</span>
+    
 </pre></div>
 
     </div>
@@ -14078,7 +14070,7 @@ $$ \frac{\sum{count(\text{ngram}_{A}) \cap count(\text{ngram}_{S})}}{\sum{count(
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># select a value for n</span>
@@ -14133,7 +14125,7 @@ $$ \frac{\sum{count(\text{ngram}_{A}) \cap count(\text{ngram}_{S})}}{\sum{count(
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># run this test cell</span>
@@ -14178,9 +14170,8 @@ $$ \frac{\sum{count(\text{ngram}_{A}) \cap count(\text{ngram}_{S})}}{\sum{count(
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong>
-Containment features need to be calculated on both training and test data as a preprocessing step.
-No it will not influence each other now as this is a pre processing step as we did not build the model yet.</p>
+<p><strong>Answer:</strong></p>
+<p>Containment features need to be calculated on both training and test data as a preprocessing step. No it will not influence each other now as this is a pre processing step as we did not build the model yet.</p>
 
 </div>
 </div>
@@ -14259,7 +14250,7 @@ No it will not influence each other now as this is a pre processing step as we d
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Compute the normalized LCS given an answer text and a source text</span>
@@ -14268,8 +14259,6 @@ No it will not influence each other now as this is a pre processing step as we d
 <span class="sd">       :param answer_text: The pre-processed text for an answer text</span>
 <span class="sd">       :param source_text: The pre-processed text for an answer&#39;s associated source text</span>
 <span class="sd">       :return: A normalized LCS value&#39;&#39;&#39;</span>
-    
-    <span class="c1"># your code here</span>
     
     <span class="n">answer_words</span> <span class="o">=</span> <span class="n">answer_text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
     <span class="n">source_words</span> <span class="o">=</span> <span class="n">source_text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
@@ -14304,7 +14293,7 @@ No it will not influence each other now as this is a pre processing step as we d
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Run the test scenario from above</span>
@@ -14358,7 +14347,7 @@ Test passed!
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># run test cell</span>
@@ -14403,7 +14392,7 @@ Test passed!
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># test on your own</span>
@@ -14475,7 +14464,7 @@ Normalized LCS values:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -14520,7 +14509,7 @@ Normalized LCS values:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[69]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -14574,7 +14563,7 @@ Normalized LCS values:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Define an ngram range</span>
@@ -14654,7 +14643,7 @@ Features:  [&#39;c_1&#39;, &#39;c_2&#39;, &#39;c_3&#39;, &#39;c_4&#39;, &#39;c_5
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># print some results </span>
@@ -14671,7 +14660,7 @@ Features:  [&#39;c_1&#39;, &#39;c_2&#39;, &#39;c_3&#39;, &#39;c_4&#39;, &#39;c_5
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[79]:</div>
+    <div class="prompt output_prompt">Out[27]:</div>
 
 
 
@@ -14915,7 +14904,7 @@ Features:  [&#39;c_1&#39;, &#39;c_2&#39;, &#39;c_3&#39;, &#39;c_4&#39;, &#39;c_5
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -15283,7 +15272,7 @@ Features:  [&#39;c_1&#39;, &#39;c_2&#39;, &#39;c_3&#39;, &#39;c_4&#39;, &#39;c_5
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[81]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Takes in dataframes and a list of selected features (column names) </span>
@@ -15296,17 +15285,17 @@ Features:  [&#39;c_1&#39;, &#39;c_2&#39;, &#39;c_3&#39;, &#39;c_4&#39;, &#39;c_5
 <span class="sd">       :param selected_features: An array of selected features that correspond to certain columns in `features_df`</span>
 <span class="sd">       :return: training and test features and labels: (train_x, train_y), (test_x, test_y)&#39;&#39;&#39;</span>
     
+    
     <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">complete_df</span><span class="p">,</span> <span class="n">features_df</span><span class="p">[</span><span class="n">selected_features</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>    
     <span class="n">df_train</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Datatype</span> <span class="o">==</span> <span class="s1">&#39;train&#39;</span><span class="p">]</span>
     <span class="n">df_test</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Datatype</span> <span class="o">==</span> <span class="s1">&#39;test&#39;</span><span class="p">]</span>
-
     <span class="c1"># get the training features</span>
     <span class="n">train_x</span> <span class="o">=</span> <span class="n">df_train</span><span class="p">[</span><span class="n">selected_features</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
     <span class="c1"># And training class labels (0 or 1)</span>
     <span class="n">train_y</span> <span class="o">=</span> <span class="n">df_train</span><span class="p">[</span><span class="s1">&#39;Class&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
     
     <span class="c1"># get the test features and labels</span>
-    <span class="n">test_x</span> <span class="o">=</span> <span class="n">df_test</span><span class="p">[</span><span class="n">selected_features</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">test_x</span> <span class="o">=</span>  <span class="n">df_test</span><span class="p">[</span><span class="n">selected_features</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
     <span class="n">test_y</span> <span class="o">=</span> <span class="n">df_test</span><span class="p">[</span><span class="s1">&#39;Class&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
     
     <span class="k">return</span> <span class="p">(</span><span class="n">train_x</span><span class="p">,</span> <span class="n">train_y</span><span class="p">),</span> <span class="p">(</span><span class="n">test_x</span><span class="p">,</span> <span class="n">test_y</span><span class="p">)</span>
@@ -15328,7 +15317,7 @@ Features:  [&#39;c_1&#39;, &#39;c_2&#39;, &#39;c_3&#39;, &#39;c_4&#39;, &#39;c_5
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[82]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -15376,12 +15365,12 @@ Features:  [&#39;c_1&#39;, &#39;c_2&#39;, &#39;c_3&#39;, &#39;c_4&#39;, &#39;c_5
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[83]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Select your list of features, this should be column names from features_df</span>
 <span class="c1"># ex. [&#39;c_1&#39;, &#39;lcs_word&#39;]</span>
-<span class="n">selected_features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;c_1&#39;</span><span class="p">,</span> <span class="s1">&#39;c_11&#39;</span><span class="p">,</span> <span class="s1">&#39;lcs_word&#39;</span><span class="p">]</span>
+<span class="n">selected_features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;c_1&#39;</span><span class="p">,</span> <span class="s1">&#39;c_5&#39;</span><span class="p">,</span> <span class="s1">&#39;lcs_word&#39;</span><span class="p">]</span>
 
 
 <span class="sd">&quot;&quot;&quot;</span>
@@ -15417,15 +15406,15 @@ Test size:  25
 
 Training df sample: 
  [[0.39814815 0.         0.19178082]
- [0.86936937 0.1745283  0.84649123]
- [0.59358289 0.         0.31606218]
+ [0.86936937 0.44954128 0.84649123]
+ [0.59358289 0.08196721 0.31606218]
  [0.54450262 0.         0.24257426]
  [0.32950192 0.         0.16117216]
  [0.59030837 0.         0.30165289]
- [0.75977654 0.01775148 0.48430493]
+ [0.75977654 0.24571429 0.48430493]
  [0.51612903 0.         0.27083333]
  [0.44086022 0.         0.22395833]
- [0.97945205 0.52205882 0.9       ]]
+ [0.97945205 0.78873239 0.9       ]]
 </pre>
 </div>
 </div>
@@ -15444,8 +15433,8 @@ Training df sample:
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong>
-I decide based on correlated features matrix after c_11 all feature are almost same corelation with each other but least related with lcs is c_11. lcs is very important feature and c_1 as well.</p>
+<p><strong>Answer:</strong></p>
+<p>I decide based on correlated features matrix after c_11 all feature are almost same corelation with each other but least related with lcs is c_11. lcs is very important feature and c_1 as well</p>
 
 </div>
 </div>
@@ -15469,7 +15458,7 @@ I decide based on correlated features matrix after c_11 all feature are almost s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[84]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">make_csv</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">data_dir</span><span class="p">):</span>
@@ -15484,8 +15473,15 @@ I decide based on correlated features matrix after c_11 all feature are almost s
         <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)</span>
     
     
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
     <span class="c1"># your code here</span>
-    <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">x</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="n">filename</span><span class="p">),</span> <span class="n">header</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">x</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="n">filename</span><span class="p">),</span> <span class="n">header</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    
+    
     
     
     <span class="c1"># nothing is returned, but a print statement indicates that the function has run</span>
@@ -15507,7 +15503,7 @@ I decide based on correlated features matrix after c_11 all feature are almost s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[85]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -15546,7 +15542,9 @@ I decide based on correlated features matrix after c_11 all feature are almost s
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Path created: test_csv/to_delete.csv
+<pre>[[0.39814815, 0.0001, 0.19178082], [0.86936937, 0.44954128, 0.84649123], [0.44086022, 0.0, 0.22395833]]
+[0, 1, 1]
+Path created: test_csv/to_delete.csv
 Tests passed!
 </pre>
 </div>
@@ -15558,7 +15556,7 @@ Tests passed!
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[86]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># delete the test csv file, generated above</span>
@@ -15580,7 +15578,7 @@ Tests passed!
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[87]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># can change directory, if you want</span>
@@ -15608,7 +15606,107 @@ Tests passed!
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Path created: plagiarism_data/train.csv
+<pre>[[0.39814815 0.         0.19178082]
+ [0.86936937 0.44954128 0.84649123]
+ [0.59358289 0.08196721 0.31606218]
+ [0.54450262 0.         0.24257426]
+ [0.32950192 0.         0.16117216]
+ [0.59030837 0.         0.30165289]
+ [0.75977654 0.24571429 0.48430493]
+ [0.51612903 0.         0.27083333]
+ [0.44086022 0.         0.22395833]
+ [0.97945205 0.78873239 0.9       ]
+ [0.95138889 0.52142857 0.89403974]
+ [0.97647059 0.57831325 0.82320442]
+ [0.81176471 0.28313253 0.45977011]
+ [0.44117647 0.         0.30555556]
+ [0.48888889 0.         0.2826087 ]
+ [0.81395349 0.63414634 0.78888889]
+ [0.61111111 0.         0.32467532]
+ [1.         0.96590909 1.        ]
+ [0.63402062 0.00526316 0.36893204]
+ [0.58293839 0.08695652 0.41666667]
+ [0.63793103 0.30701754 0.48987854]
+ [0.42038217 0.         0.21875   ]
+ [0.68776371 0.07725322 0.51639344]
+ [0.67664671 0.11042945 0.47252747]
+ [0.76923077 0.45084746 0.60645161]
+ [0.71226415 0.08653846 0.53669725]
+ [0.62992126 0.28       0.3943662 ]
+ [0.71573604 0.00518135 0.34313725]
+ [0.33206107 0.         0.15302491]
+ [0.71721311 0.07916667 0.4559387 ]
+ [0.87826087 0.47345133 0.82      ]
+ [0.52980132 0.31543624 0.45      ]
+ [0.57211538 0.         0.2293578 ]
+ [0.31967213 0.         0.16535433]
+ [0.53       0.         0.26046512]
+ [0.78       0.60714286 0.66990291]
+ [0.65269461 0.         0.35519126]
+ [0.44394619 0.         0.23376623]
+ [0.66502463 0.18090452 0.34926471]
+ [0.72815534 0.03465347 0.34761905]
+ [0.76204819 0.28963415 0.56772334]
+ [0.94701987 0.28571429 0.77439024]
+ [0.36842105 0.         0.19298246]
+ [0.53289474 0.         0.21818182]
+ [0.61849711 0.00591716 0.26666667]
+ [0.51030928 0.01052632 0.22110553]
+ [0.57983193 0.         0.22891566]
+ [0.40703518 0.         0.1722488 ]
+ [0.51546392 0.         0.23684211]
+ [0.58454106 0.04926108 0.29493088]
+ [0.6171875  0.16935484 0.5037594 ]
+ [1.         0.84251969 0.91176471]
+ [0.99166667 0.88793103 0.99230769]
+ [0.5505618  0.         0.28333333]
+ [0.41935484 0.         0.26168224]
+ [0.83516484 0.03448276 0.64705882]
+ [0.92708333 0.29347826 0.85      ]
+ [0.492891   0.         0.23502304]
+ [0.70873786 0.32178218 0.66197183]
+ [0.86338798 0.30726257 0.79111111]
+ [0.96060606 0.86503067 0.92982456]
+ [0.43801653 0.         0.22307692]
+ [0.73366834 0.07179487 0.49009901]
+ [0.51388889 0.         0.25203252]
+ [0.48611111 0.         0.22767857]
+ [0.84518828 0.30212766 0.6437247 ]
+ [0.485      0.         0.24271845]
+ [0.95067265 0.78082192 0.83950617]
+ [0.55121951 0.23383085 0.28301887]
+ [0.36125654 0.         0.16176471]]
+[0. 1. 1. 0. 0. 0. 1. 0. 0. 1. 1. 1. 1. 0. 0. 1. 0. 1. 1. 1. 1. 0. 1. 1.
+ 1. 1. 1. 1. 0. 1. 1. 1. 0. 0. 0. 1. 0. 0. 1. 1. 1. 1. 1. 0. 0. 0. 0. 0.
+ 0. 1. 1. 1. 1. 0. 0. 1. 1. 0. 1. 1. 1. 0. 1. 1. 0. 1. 1. 1. 1. 0.]
+Path created: plagiarism_data/train.csv
+[[1.         0.92227979 0.82075472]
+ [0.76530612 0.58965517 0.62171053]
+ [0.88444444 0.18099548 0.59745763]
+ [0.61904762 0.04324324 0.42783505]
+ [0.92       0.3943662  0.775     ]
+ [0.99267399 0.9739777  0.99305556]
+ [0.41269841 0.         0.34666667]
+ [0.46268657 0.         0.18932039]
+ [0.58115183 0.         0.24742268]
+ [0.58421053 0.         0.29441624]
+ [0.56637168 0.         0.25833333]
+ [0.48148148 0.02290076 0.27891156]
+ [0.61979167 0.02659574 0.34158416]
+ [0.92173913 0.65486726 0.92941176]
+ [1.         0.92248062 1.        ]
+ [0.86153846 0.06282723 0.50471698]
+ [0.62616822 0.22397476 0.55855856]
+ [1.         0.9688716  0.99669967]
+ [0.38383838 0.01030928 0.17874396]
+ [1.         0.94464945 0.85467128]
+ [0.61392405 0.         0.29834254]
+ [0.97276265 0.83003953 0.92708333]
+ [0.96280992 0.68907563 0.90980392]
+ [0.41525424 0.         0.17741935]
+ [0.53218884 0.01746725 0.24583333]]
+[1. 1. 1. 1. 1. 1. 0. 0. 0. 0. 0. 0. 1. 1. 1. 1. 1. 1. 0. 1. 0. 1. 1. 0.
+ 0.]
 Path created: plagiarism_data/test.csv
 </pre>
 </div>
